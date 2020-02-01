@@ -4,5 +4,5 @@ sudo add-apt-repository ppa:savoury1/graphics
 sudo add-apt-repository ppa:savoury1/multimedia
 sudo add-apt-repository ppa:jonathonf/ffmpeg-4
 sudo apt-get update
-sudo apt-get install ffmpeg
+sudo apt-get install ffmpeg --enable librav1e
 
