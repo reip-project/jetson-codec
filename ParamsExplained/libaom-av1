@@ -1,0 +1,17 @@
+experiment notes:
+according to ffmpeg page(trac.ffmpeg.org/wiki/Encode/AV1), 
+"AV1 encoding is very slow in comparison to VP9 or H.264, and considered experimental at this stage."
+
+And it is very slow from experiment result. Not recommended using.
+
+
+using:
+crf
+Set the quality/size tradeoff for constant-quality (no bitrate target) and constrained-quality (with maximum bitrate target) modes. Valid range is 0 to 63, higher numbers indicating lower quality and smaller output size. Only used if set; by default only the bitrate target is used.
+
+possible useful:
+b
+Set bitrate target in bits/second. By default this will use variable-bitrate mode. If maxrate and minrate are also set to the same value then it will use constant-bitrate mode, otherwise if crf is set as well then it will use constrained-quality mode.
+
+cpu-used
+Set the quality/encoding speed tradeoff. Valid range is from 0 to 8, higher numbers indicating greater speed and lower quality. The default value is 1, which will be slow and high quality.

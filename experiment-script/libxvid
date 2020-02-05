@@ -1,0 +1,9 @@
+cd ~/Videos/result
+rm -rf ffmpeg-libxvid
+mkdir ffmpeg-libxvid
+cd ffmpeg-libxvid
+for i in {1..31};
+do 
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libxvid -qscale:v $i sunny-libxvid-qscale-$i.mp4
+done
+    

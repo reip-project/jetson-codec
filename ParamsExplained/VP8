@@ -1,0 +1,2 @@
+From the FFmpeg page (https://trac.ffmpeg.org/wiki/Encode/VP8), it is said that the VP8 successor VP9 provides better video quality at a lower bitrate. But since it's also a modern codec we are testing it anyway.
+

@@ -1,0 +1,8 @@
+cd ~/Videos/result
+rm -rf ffmpeg-libx265
+mkdir ffmpeg-libx265
+cd ffmpeg-libx265
+for i in {0..51};
+do 
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libx265 -crf $i sunny-libx265-crf-$i.mp4
+done

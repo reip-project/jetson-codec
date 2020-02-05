@@ -1,0 +1,9 @@
+cd ~/Videos/result
+rm -rf ffmpeg-vp8
+mkdir ffmpeg-vp8
+cd ffmpeg-vp8
+for i in {4..63};
+do 
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libvpx -crf $i -b:v 1M -c:a libvorbis sunny-vp8-crf-$i.webm
+done
+    

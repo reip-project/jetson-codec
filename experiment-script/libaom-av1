@@ -1,0 +1,8 @@
+cd ~/Videos/result
+rm -rf ffmpeg-libaom-av1
+mkdir ffmpeg-libaom-av1
+cd ffmpeg-libaom-av1
+for i in {0..63};
+do 
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libaom-av1 -crf $i -b:v 2000k -movflags +faststart -strict experimental sunny-libaom-av1-crf-$i.mp4
+done

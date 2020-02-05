@@ -1,0 +1,9 @@
+cd ~/Videos/result
+rm -rf ffmpeg-libx264
+mkdir ffmpeg-libx264
+cd ffmpeg-libx264
+for i in {0..51};
+do 
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libx264 -crf $i sunny-libx264-crf-$i.mp4
+done
+    

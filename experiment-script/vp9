@@ -1,0 +1,9 @@
+cd ~/Videos/result
+rm -rf ffmpeg-vp9
+mkdir ffmpeg-vp9
+cd ffmpeg-vp9
+for i in {4..63};
+do 
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libvpx-vp9 -b:v 0 -crf $i -pass 1 -f webm /dev/null && \
+    ~/ffmpeg-git-20200130-amd64-static/ffmpeg -i ~/Videos/raw/sunny.mp4 -c:v libvpx-vp9 -b:v 0 -crf $i -pass 2 -c:a libopus sunny-vp9-crf-$i.webm
+done
