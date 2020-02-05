@@ -60,6 +60,15 @@ Check [here](https://trac.ffmpeg.org/wiki/Encode/MPEG-4) for code format.
 Use option `-qscale:v` to adjust the tradeoff between video quality and file size. Range: 1-31  
 qscale = 1 being highest quality/largest filesize and 31 being the lowest quality/smallest filesize. This is a variable bit rate mode, roughly analogous to using -qp (constant QP [quantization parameter]) with x264. Most of the time this should be the preferred method.
 
+## Current problems
+Most of our FFmpeg codec here are running pretty slow. More work might need to be done to improve the speed. FFmpeg actually provides the option like setting up the desired bit rate to speed up the encoding, but this would cause some downgrade to the video quality.  
+Also `-crf` is not necessary the only params to tune the output video. Might think about other options when we have better knowledge in the object detection process.
+We can also consider the hardware encoders like VAAPI encoder in FFmpeg documentation. But I haven't figure out how to do that.
+
+## Next steps
+Build pipelines to perfrom object detection from our available sets of experiment outcomes. However currently there is no python package to perfrom pedestrain count. Need to revise some github repo. 
+  
+
 
 
 
