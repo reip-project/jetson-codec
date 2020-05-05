@@ -144,7 +144,7 @@ def runner(file_path):
 
     frame_detection_array = []
 
-    frame_hop = 1000
+    frame_hop = 15
 
     for frame_idx in tqdm(range(0, total_frames, frame_hop)):
         
@@ -207,7 +207,11 @@ def runner(file_path):
     sys.stdout.flush()
     pickle.dump(frame_detection_array, open(os.path.join(out_path, os.path.basename(file_path) + '.p'), 'wb'))
 
-for fpath in tqdm(glob.glob('../output_video/port_1_1572451294/*.mp4')):
+
+glob_path = '../output_video/port_1_1572451294/*.mp4'
+#glob_path = './*.mp4'
+
+for fpath in tqdm(glob.glob(glob_path)):
     # pool.apply_async(runner, args=(fpath,))
     runner(fpath)
 
